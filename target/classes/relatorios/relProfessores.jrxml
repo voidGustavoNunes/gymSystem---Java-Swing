@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="400" pageHeight="842" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="081b02f4-fdea-48ea-b26b-e35a782568ba">
+	<property name="ireport.zoom" value="1.6105100000000012"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="cabecalho" forecolor="#FF0033" backcolor="#FFFFFF"/>
+	<subDataset name="dataset1" uuid="01bb7403-6b0b-48ac-b71c-41e8f8cba49d"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\gymSystem-main\\gymSystem-main\\\target\\classes\\relatorios\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="foto" class="java.lang.Object">
+		<fieldDescription><![CDATA[foto]]></fieldDescription>
+	</field>
+	<field name="situacao" class="java.lang.String">
+		<fieldDescription><![CDATA[situacao]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<fieldDescription><![CDATA[cpf]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[telefone]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="107" y="0" width="139" height="79" uuid="45dbbbee-fa2b-4d8e-bc0c-e435b0751ab9"/>
+				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\gymSystem-main\\gymSystem-main\\gymSystem-main\\src\\main\\resources\\icons16px\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement style="cabecalho" x="37" y="0" width="114" height="22" uuid="d88f0df2-b357-4eb1-bab5-e63efc535aa1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME DO PROFESSOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="320" y="0" width="40" height="22" uuid="6e52f2e3-535a-4063-9e36-82f203d1530c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="151" y="0" width="71" height="22" uuid="599f24c2-2404-4a3c-ba2f-362003a83fda"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CPF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="222" y="0" width="60" height="22" uuid="590b91ed-cd8e-4390-bda6-5746197f72f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SITUACAO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="282" y="0" width="38" height="22" uuid="6b87088d-d366-41fd-be8c-bfc543b39fbb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="111" y="275" width="100" height="20" uuid="660855c4-5f72-4537-8e82-aa6c18245f79"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="57" y="235" width="100" height="20" uuid="043dbaff-e29c-4b22-a5d1-2da41b148936"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="252" y="295" width="100" height="20" uuid="2b9f3d76-244e-44fe-a1e6-619c6f474f0d"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="1" width="37" height="20" forecolor="#FF0033" uuid="89301d56-93b2-45ce-9d3a-36762fe3f0fe"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="22" width="360" height="1" uuid="6c752313-ad68-4f51-a32a-79f136d91025"/>
+			</line>
+			<textField>
+				<reportElement x="320" y="0" width="40" height="22" uuid="74b0cae1-57ce-4d0c-a4d1-ed03e9c2a44b"/>
+				<textFieldExpression><![CDATA[""+$F{foto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="0" width="38" height="22" uuid="af910099-1f87-46c6-a53c-fb8a0e5fe500"/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="0" width="71" height="23" uuid="e4fed84e-5519-45d6-ab23-25e80cea7d88"/>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="60" height="22" uuid="786f1121-40e3-449e-acaf-8328310d6fb7"/>
+				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="0" width="114" height="23" uuid="e433c4d0-520a-4680-bd0c-0ccd0874478d"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="-1" width="37" height="24" uuid="0a4a9ffe-f463-49ba-adb2-5d73949f250e"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="107" height="20" uuid="f96f3739-6d28-4ed0-8bba-6b4ef86ef3b9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="52" height="20" uuid="3f750983-82f4-483c-b3a5-8e33d707b6d1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="320" y="0" width="40" height="20" uuid="4ca1b770-97e2-4db0-8aa3-4e4561cf3e67"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="122" y="0" width="100" height="20" uuid="b65aab61-d33d-41ab-99b2-8988a46d810c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

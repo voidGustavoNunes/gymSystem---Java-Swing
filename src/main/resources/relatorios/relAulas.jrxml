@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="400" pageHeight="842" columnWidth="360" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="081b02f4-fdea-48ea-b26b-e35a782568ba">
+	<property name="ireport.zoom" value="1.6105100000000012"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="cabecalho" forecolor="#FF0033" backcolor="#FFFFFF"/>
+	<subDataset name="dataset1" uuid="01bb7403-6b0b-48ac-b71c-41e8f8cba49d"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\gymSystem-main\\gymSystem-main\\gymSystem-main\\target\\classes\\relatorios\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idAula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idAula]]></fieldDescription>
+	</field>
+	<field name="professores" class="java.util.List">
+		<fieldDescription><![CDATA[professores]]></fieldDescription>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<fieldDescription><![CDATA[tipo]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="107" y="0" width="137" height="79" uuid="45dbbbee-fa2b-4d8e-bc0c-e435b0751ab9"/>
+				<imageExpression><![CDATA["C:\\Users\\Gustavo\\Downloads\\gymSystem-main\\gymSystem-main\\gymSystem-main\\src\\main\\resources\\icons16px\\logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement style="cabecalho" x="43" y="0" width="130" height="22" uuid="d88f0df2-b357-4eb1-bab5-e63efc535aa1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOME DA AULA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="cabecalho" x="0" y="0" width="43" height="22" uuid="f177ead3-bcb8-4aeb-9257-5c228032efd0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Franklin Gothic Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="22" width="360" height="1" uuid="6c752313-ad68-4f51-a32a-79f136d91025"/>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="43" height="22" uuid="a9e59ba4-ff95-463a-b963-9785333f0cf5"/>
+				<textFieldExpression><![CDATA[$F{idAula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="130" height="22" uuid="715c757c-bedc-4af7-91f3-f170692758c6"/>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="173" y="0" width="187" height="22" uuid="e28d704a-e500-4df6-aca7-9281767fa865"/>
+				<parametersMapExpression><![CDATA[new HashMap()]]></parametersMapExpression>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{professores})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subRelAulasProf.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="0" width="107" height="20" uuid="f96f3739-6d28-4ed0-8bba-6b4ef86ef3b9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="52" height="20" uuid="3f750983-82f4-483c-b3a5-8e33d707b6d1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="320" y="0" width="40" height="20" uuid="4ca1b770-97e2-4db0-8aa3-4e4561cf3e67"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="122" y="0" width="100" height="20" uuid="b65aab61-d33d-41ab-99b2-8988a46d810c"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

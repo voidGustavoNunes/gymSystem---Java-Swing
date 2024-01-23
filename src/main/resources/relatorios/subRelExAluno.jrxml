@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="210" pageHeight="802" columnWidth="210" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2c870e1c-0354-4a11-a4ce-c49da6214a3a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="chavePK" class="model.AlunoEProfessorEExercicioPK">
+		<fieldDescription><![CDATA[chavePK]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" forecolor="#FF0033" uuid="e591ba52-3cd0-48fd-ad35-3ed294e1d250"/>
+				<textElement textAlignment="Center">
+					<font fontName="Franklin Gothic Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXERCICIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="1" width="110" height="20" forecolor="#FF0033" uuid="2054f584-ba2c-467d-b44f-e20d7f832a3e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Franklin Gothic Medium" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROFESSOR]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9031feb3-cd7c-44fc-aefc-a390599a27b2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{chavePK}.getExercicio().getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="110" height="20" uuid="69144a37-40a3-4b15-8b69-5ed13439d94d"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{chavePK}.getProfessor().getNome()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
