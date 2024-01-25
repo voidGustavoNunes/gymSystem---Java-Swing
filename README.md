@@ -137,7 +137,7 @@ Gustavo Nunes Guedes
 
 ## 📄 Licença
 
-Todos os Direitos Reservados
+Livre
 
 ## 🎁 Expressões de gratidão
 
